@@ -1,0 +1,19 @@
+<h1>Test 4</h1>
+
+<h2>Enter your first and last name</h2>
+<div>
+  <label for="firstName">First Name</label><br />
+  <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName">
+</div>
+<div class="mt-2">
+  <label for="lastName">Last Name</label><br />
+  <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName">
+</div>
+<div class="mt-2" *ngIf="formError">
+  Please fill the form completely
+</div>
+<button (click)="generateUsername()">Submit</button>
+<div *ngIf="userName !== ''">
+  Your username is {{userName}}
+</div>
+

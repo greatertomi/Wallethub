@@ -15,4 +15,14 @@ export class Test1Component implements OnInit {
   ngOnInit(): void {
   }
 
+  calculatePayment(): void {
+    if (this.loan_amount && this.loan_amount > 0) {
+      this.monthly_payment = 0.02 * this.loan_amount;
+      this.late_payment = 0.05 * this.monthly_payment;
+    } else {
+      this.monthly_payment = -1;
+      this.late_payment = -1;
+    }
+  }
+
 }

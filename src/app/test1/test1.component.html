@@ -1,7 +1,18 @@
 <div>
   <h2>Loan Details</h2>
-  <b>Monthly Payment:</b> {{monthly_payment}} <br/>
-  <b>Late Payment Fee : {{late_payment}}</b> <br/>
+  <div>
+    <label for="amount">Please enter your loan amount: </label><br/>
+    <input type="text" name="amount" id="amount" [(ngModel)]="loan_amount"
+      (keyup)="calculatePayment()"/>
+  </div>
+  <div>
+    <b>Monthly Payment: </b>
+    <span *ngIf="monthly_payment !== -1">${{monthly_payment | number}}</span>
+    <span *ngIf="monthly_payment === -1">NA</span>
+  </div>
+  <div>
+    <b>Late Payment Fee: </b>
+    <span *ngIf="late_payment !== -1">${{late_payment | number}} </span>
+    <span *ngIf="late_payment === -1">NA</span>
+  </div>
 </div>
-
-

@@ -1,0 +1,20 @@
+<form (ngSubmit)="handleFormSubmit($event)">
+  <h2>Login</h2>
+  <div>
+    <label for="email">Email</label><br/>
+    <input type="email" name="email" id="email" [(ngModel)]="email"/>
+    <div *ngIf="emailErrorMsg !== ''">
+      {{emailErrorMsg}}
+    </div>
+  </div>
+  <div class="mt-2">
+    <label for="password">Password</label><br/>
+    <input type="password" name="password" id="password" [(ngModel)]="password" />
+    <div *ngIf="passwordErrorMsg !== ''">
+      {{passwordErrorMsg}}
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+  <br/><br/>
+  <div *ngIf="logged_in">Logged In!</div>
+</form>
