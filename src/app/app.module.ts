@@ -12,6 +12,9 @@ import { Test3Component } from './test3/test3.component';
 import { Test4Component } from './test4/test4.component';
 import { Test6Component } from './test6/test6.component';
 import {NgxLinkifyjsModule} from 'ngx-linkifyjs';
+import { PreviewComponent } from './preview/preview.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import {NgxLinkifyjsModule} from 'ngx-linkifyjs';
     TextField,
     Test3Component,
     Test4Component,
-    Test6Component
+    Test6Component,
+    PreviewComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

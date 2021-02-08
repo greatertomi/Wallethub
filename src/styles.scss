@@ -1,6 +1,11 @@
 @import "utilities";
+@import "~bootstrap/dist/css/bootstrap.css";
 
 @font-face {
   font-family: ProximaNova;
   src: url(assets/font/ProximaNova-Reg.otf) format("opentype");
+}
+
+body {
+  background: #F8F8F8;
 }
