@@ -1,7 +1,7 @@
 <app-header title="Frontend Angular Assignment"></app-header>
 <div class="row mainContent">
   <div class="col-md-4 col-sm-6" *ngFor="let test of tests">
-    <div class="card mt-4">
+    <div class="card" [routerLink]="test.path">
       <div class="card-body">
         <h4 class="mb-3">{{test.title}}</h4>
         <div>

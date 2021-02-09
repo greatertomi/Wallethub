@@ -1,18 +1,42 @@
-<div>
-  <h2>Loan Details</h2>
-  <div>
-    <label for="amount">Please enter your loan amount: </label><br/>
-    <input type="text" name="amount" id="amount" [(ngModel)]="loan_amount"
-      (keyup)="calculatePayment()"/>
-  </div>
-  <div>
-    <b>Monthly Payment: </b>
-    <span *ngIf="monthly_payment !== -1">${{monthly_payment | number}}</span>
-    <span *ngIf="monthly_payment === -1">NA</span>
-  </div>
-  <div>
-    <b>Late Payment Fee: </b>
-    <span *ngIf="late_payment !== -1">${{late_payment | number}} </span>
-    <span *ngIf="late_payment === -1">NA</span>
+<!--<app-header title="Challenge on calculation and pipe"></app-header>-->
+
+<div class="mainContent mt-4">
+  <div class="offset-lg-2 col-lg-6 col-md-8 col-sm-12">
+    <div class="card mb-5">
+      <div class="card-body">
+        <h3 class="mb-3 cardTitle">Question 1</h3>
+        <blockquote>
+          <div class="mb-3">
+            In the following component, update the code so that when the value of the [loan-amount] is changed:
+          </div>
+          <ul>
+            <li>If it's blank or 0, the values of [monthly_payment] and [late_payment] becomes "N/A",</li>
+            <li>If it has a value, the value of [monthly_payment] becomes 2% of [loan-ammount] and the value of [late_payment]
+              becomes 5% of [monthly_payment].</li>
+            <li>
+              Both [monthly_payment] and [late_payment] should print in the template in currency format : $1,234
+            </li>
+          </ul>
+        </blockquote>
+      </div>
+    </div>
+    <div>
+      <h2>Loan Details</h2>
+      <div>
+        <label for="amount">Please enter your loan amount: </label><br/>
+        <input type="text" name="amount" id="amount" [(ngModel)]="loan_amount"
+               (keyup)="calculatePayment()" class="form-control"/>
+      </div>
+      <div class="mt-3">
+        <b>Monthly Payment: </b>
+        <span *ngIf="monthly_payment !== -1">${{monthly_payment | number}}</span>
+        <span *ngIf="monthly_payment === -1">NA</span>
+      </div>
+      <div class="mt-2">
+        <b>Late Payment Fee: </b>
+        <span *ngIf="late_payment !== -1">${{late_payment | number}} </span>
+        <span *ngIf="late_payment === -1">NA</span>
+      </div>
+    </div>
   </div>
 </div>

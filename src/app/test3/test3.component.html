@@ -1,20 +1,50 @@
-<form (ngSubmit)="handleFormSubmit($event)">
-  <h2>Login</h2>
-  <div>
-    <label for="email">Email</label><br/>
-    <input type="email" name="email" id="email" [(ngModel)]="email"/>
-    <div *ngIf="emailErrorMsg !== ''">
-      {{emailErrorMsg}}
+<!--<app-header title="Challenge on form validation"></app-header>-->
+<div class="mainContent mt-4">
+  <div class="offset-lg-2 col-lg-6 col-md-8 col-sm-12">
+    <div class="card mb-5">
+      <div class="card-body">
+        <h3 class="mb-3 cardTitle">Question 3</h3>
+        <blockquote>
+          <div class="mb-1">
+            Update the following components to meet the requirements :
+          </div>
+          <div class="mb-1">
+            Bind [email] property to input[name="email"]
+            Bind [password] property to input[name="password"]
+          </div>
+          <div class="mb-1">
+            Without using angular forms, validate both fields so that :
+            <ul>
+              <li>email is in correct format ( ex: ends with @a.com)</li>
+              <li>password contains at least one special character, one upper case character, one lower case character, one number and a minium of 8 characters in length</li>
+              <li>The fields should be validated when trying to submit the form</li>
+              <li>Prevent the form from doing an actual form submit and instead, after validation pass, turn on the [logged_in] flag</li>
+            </ul>
+          </div>
+          <div>
+            You can add error messages below each field that shows if the field is not valid
+          </div>
+        </blockquote>
+      </div>
     </div>
+    <form (ngSubmit)="handleFormSubmit($event)">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="email">Email</label><br/>
+        <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control"/>
+        <div *ngIf="emailErrorMsg !== ''" class="text-danger">
+          {{emailErrorMsg}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label><br/>
+        <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control"/>
+        <div *ngIf="passwordErrorMsg !== ''" class="text-danger">
+          {{passwordErrorMsg}}
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-4">Submit</button>
+      <div *ngIf="logged_in" class="mt-4 text-success">Logged In!</div>
+    </form>
   </div>
-  <div class="mt-2">
-    <label for="password">Password</label><br/>
-    <input type="password" name="password" id="password" [(ngModel)]="password" />
-    <div *ngIf="passwordErrorMsg !== ''">
-      {{passwordErrorMsg}}
-    </div>
-  </div>
-  <button type="submit">Submit</button>
-  <br/><br/>
-  <div *ngIf="logged_in">Logged In!</div>
-</form>
+</div>

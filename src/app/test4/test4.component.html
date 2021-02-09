@@ -1,19 +1,42 @@
-<h1>Test 4</h1>
-
-<h2>Enter your first and last name</h2>
-<div>
-  <label for="firstName">First Name</label><br />
-  <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName">
+<!--<app-header title="Challenge on generating username"></app-header>-->
+<div class="mainContent mt-4">
+  <div class="offset-lg-2 col-lg-6 col-md-8 col-sm-12">
+    <div class="card mb-5">
+      <div class="card-body">
+        <h3 class="mb-3 cardTitle">Question 4</h3>
+        <blockquote>
+          <div class="mb-2">
+            Add 2 input forms in the following component for first name and last name. Once both forms are filled out by
+            the user, and user has clicked out of the fields, then beside it a username should be automatically
+            generated which should be in the following format: [firstname]_[lastname]_[random integer]
+          </div>
+          <div class="mb-2">
+            First name and last name should be lowercased, and then a random integer between 1 and 9 should be added
+            to the end
+          </div>
+          <div>
+            For example: if the inputs are "John" and "DOE" the generated username could be "john_doe_4" or "john_doe_2"
+          </div>
+        </blockquote>
+      </div>
+    </div>
+    <form>
+      <h4 class="mb-3">Enter your first and last name</h4>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" class="form-control" />
+      </div>
+      <div class="form-group text-danger" *ngIf="formError">
+        Please fill the form completely
+      </div>
+      <button (click)="generateUsername()" class="mt-3 btn btn-primary">Submit</button>
+      <div *ngIf="userName !== ''" class="mt-3">
+        Your username is <span class="highlighted">{{userName}}</span>
+      </div>
+    </form>
+  </div>
 </div>
-<div class="mt-2">
-  <label for="lastName">Last Name</label><br />
-  <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName">
-</div>
-<div class="mt-2" *ngIf="formError">
-  Please fill the form completely
-</div>
-<button (click)="generateUsername()">Submit</button>
-<div *ngIf="userName !== ''">
-  Your username is {{userName}}
-</div>
-

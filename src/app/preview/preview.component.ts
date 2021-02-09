@@ -9,19 +9,23 @@ export class PreviewComponent implements OnInit {
   tests = [
     {
       title: 'Test 1',
-      mainTask: 'Challenge on calculation and pipe'
+      mainTask: 'Challenge on calculation and pipe.',
+      path: '/test1'
     },
     {
       title: 'Test 2',
-      mainTask: 'Challenge on attribute binding.'
+      mainTask: 'Challenge on attribute binding.',
+      path: '/test2'
     },
     {
       title: 'Test 3',
-      mainTask: 'Challenge on form validation'
+      mainTask: 'Challenge on form validation.',
+      path: '/test3'
     },
     {
       title: 'Test 4',
-      mainTask: 'Challenge on generating username'
+      mainTask: 'Challenge on generating username',
+      path: '/test4'
     },
     {
       title: 'Test 5',
@@ -29,7 +33,8 @@ export class PreviewComponent implements OnInit {
     },
     {
       title: 'Test 6',
-      mainTask: 'Challenge on text display'
+      mainTask: 'Challenge on text display',
+      path: '/test6'
     }
   ];
   constructor() { }
