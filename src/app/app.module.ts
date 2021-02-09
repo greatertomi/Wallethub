@@ -15,6 +15,7 @@ import {NgxLinkifyjsModule} from 'ngx-linkifyjs';
 import { PreviewComponent } from './preview/preview.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { Test5Component } from './test5/test5.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HeaderComponent } from './header/header.component';
     Test6Component,
     PreviewComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    Test5Component
   ],
   imports: [
     BrowserModule,

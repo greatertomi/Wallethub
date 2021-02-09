@@ -29,7 +29,8 @@ export class PreviewComponent implements OnInit {
     },
     {
       title: 'Test 5',
-      mainTask: 'Challenge on Rxjs'
+      mainTask: 'Challenge on Rxjs',
+      path: '/test5'
     },
     {
       title: 'Test 6',
